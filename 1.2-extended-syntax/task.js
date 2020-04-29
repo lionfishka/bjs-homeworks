@@ -26,7 +26,7 @@ function getAverageMark(marks){
     }
    
     let sum = 0;
-    for (let i = 0; i <= marks.length; i++) {
+    for (let i = 0; i < marks.length; i++) {
         sum += marks[i];
     }
   
@@ -38,7 +38,7 @@ function getAverageMark(marks){
 function askDrink(name,dateOfBirthday){
     if (new Date().getFullYear() - dateOfBirthday.getFullYear() >= 18) {
         result = `Не желаете ли олд-фэшн, ${name}?`;
-    } else if (new Date().getFullYear() - dateOfBirthday.getFullYear() < 18) {
+    } else {
         result = `Сожалею, ${name}, но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!`;
     } 
 
