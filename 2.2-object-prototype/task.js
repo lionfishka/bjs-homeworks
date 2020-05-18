@@ -1,16 +1,16 @@
 function getAnimalSound(animal) {
-    const animalSound = animal.sound;
     if (animal === undefined) {
         return null;
     } else {  
+        const animalSound = animal.sound;
         return animalSound;
     }
 }
 
 function getAverageMark(...marks) {
-    const sum = 0;
+    let sum = 0;
     for (let i = 0; i < marks.length; i++) {
-        sum += marks[i];
+        sum += parseFloat(marks[i]);
     }
     const average = sum / marks.length;
     return Math.round(average);
