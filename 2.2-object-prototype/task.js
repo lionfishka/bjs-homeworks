@@ -18,18 +18,19 @@ function getAverageMark(...marks) {
 
 function checkBirthday(birthday) {
     
+    const birthdayDate = new Date(birthday);
     const now = Date.now();
-    new Date (1900, 0, 1);
-    const birthday = new Date.now();
-    const diff = now - birthday;
-    const age = diff / date.Milliseconds;
-    const verdict;
+    // const birthday = new Date.now();
+    const diff = now - (+birthdayDate);
+    // const diff = now - birthday;
+    const age = diff / (365.25 * 24 * 3600 * 1000);
     
-    if (age > 18) {
+    if (age >= 18) {
         verdict = "Да";
-    } else {
+    } else if (age < 18) {
         verdict = "Нет";
     }
 
 return verdict;
+// return age >= 18;
 }
