@@ -25,12 +25,12 @@ function checkBirthday(birthday) {
     // const diff = now - birthday;
     const age = diff / (365.25 * 24 * 3600 * 1000);
     
-    if (age >= 18) {
-        verdict = "Да";
-    } else if (age < 18) {
-        verdict = "Нет";
-    }
+    // if (age >= 18) {
+    //     verdict = "Да";
+    // } else if (age < 18) {
+    //     verdict = "Нет";
+    // }
 
-return verdict;
-// return age >= 18;
+// return verdict;
+return age >= 18;
 }
