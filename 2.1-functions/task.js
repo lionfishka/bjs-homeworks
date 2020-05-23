@@ -1,73 +1,64 @@
 function getSolutions(a,b,c) {
 
     let D = (b**2) - (4*a*c);
-    // let roots = [];
-    let x1;
-    let x2;
+    let x1 = (-b + Math.sqrt(D)) / (2*a);
+    let x2 = (-b - Math.sqrt(D)) / (2*a);
 
     if (D < 0) {
-        return D;
+        return {
+            "D": D,
+            "roots": []
+        }
     } else if (D === 0) {
-        x1 = (-b + Math.sqrt(D)) / (2*a);
-        // return [D, roots];
-        return [D, x1];
-    } else if (D > 0) {
-        x1 = (-b + Math.sqrt(D)) / (2*a);
-        x2 = (-b - Math.sqrt(D)) / (2*a);
-        return [D, x1, x2];
+        // x1 = (-b + Math.sqrt(D)) / (2*a);
+        return {
+            "D": D,
+            "roots": [x1]
+        }
+    } else {
+        // x1 = (-b + Math.sqrt(D)) / (2*a);
+        // x2 = (-b - Math.sqrt(D)) / (2*a);
+        return {
+            "D": D,
+            "roots": [x1, x2]
+        }
     }
-
-    // return x;
 }
 
 function showSolutionsMessage(a, b, c) {
     let result = getSolutions(a,b,c);
-    let D = result.D;
     console.log(`Вычисляем корни квадратного уравнения ${a}x² + ${b}x + ${c}`);
     console.log(`Значение дискриминанта: ${result.D}`);
-    if (D < 0) {
+    if (result.D < 0) {
         console.log(`Уравнение не имеет вещественных корней`);
-    } else if (D === 0) {
-        console.log(`Уравнение имеет один корень X₁ = ${result.x1}`);
+    } else if (result.D === 0) {
+        console.log(`Уравнение имеет один корень X₁ = ${result.roots[0]}`);
     } else {
-        console.log(`Уравнение имеет два корня. X₁ = ${result.x1}, X₂ = ${result.x2}`);
+        console.log(`Уравнение имеет два корня. X₁ = ${result.roots[0]}, X₂ = ${result.roots[1]}`);
     }
 }
 
 function getAverageScore(data) {
-    const inputData = {
-        subj: [algebra, geometry, russian, physics, music, english, poetry, chemistry, french],
-        marks: [],
-    };
+    let averageScore = [];
 
-    for (marks in inputData) {
-        return [`algebra: ${average}, \n
-        geometry: ${average}, \n
-        russian: ${average}, \n
-        physics: ${average}, \n
-        music: ${average}, \n
-        english: ${average}, \n
-        poetry: ${average}, \n
-        chemistry: ${average}, \n
-        french: ${average}, \n
-        average: ${average}`];
-    }        
+    for(let prop in data) {
+        data[prop] = getAverageMark(data[prop]);
+        averageScore.push(data[prop]);
+    }
+    
+    data['average'] = getAverageMark(averageScore);
+
+    return data;
 }
 
 function getAverageMark(marks){
-
+   
     let sum = 0;
-    let average;
-    for(subj in inputData) {
-        if (inputData.marks.length === 0) {
-         return 0;
-            } else {
-                 for (let i = 0; i < inputData.marks.length; i++) {
-                sum += Number(inputData.marks[i]);
-            }
-
-         average = sum / inputData.marks.length;
+    for (let i = 0; i < marks.length; i++) {
+        sum += marks[i];
     }
-    // console.log({subj, marks});
-    }
+  
+    let averageScore = sum / marks.length;
+    
+    return averageScore;
 }
