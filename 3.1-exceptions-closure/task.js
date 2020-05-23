@@ -2,7 +2,7 @@
 
 function parseCount(value) {
     const newValue = Number.parseInt(value);
-    if (newValue == NaN) {
+    if (typeof newValue === NaN) {
         const parseCountError = new Error("Невалидное значение");
         throw parseCountError;
     } else {
