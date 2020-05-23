@@ -28,9 +28,11 @@ class Triangle {
     }
 
     // (сумма двух сторон меньше третьей) 
-    if () {
-        const triangleError = new Error("Треугольник с такими сторонами не существует");
-        throw triangleError;
+    validateTriangle() {
+        if ((a + b) < c || (a + c) < b || (b + c) < a) {
+            const triangleError = new Error("Треугольник с такими сторонами не существует");
+            throw triangleError;
+         }
     }
 
     getPerimeter() {
