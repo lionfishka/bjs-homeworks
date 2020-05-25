@@ -44,149 +44,93 @@ const stormStaff = new Weapon('Посох Бури', 10, 300, 3);
 
 
 class Arm extends Weapon {
-    constructor(obj) {
-        super(Object.assign({
+    constructor() {
+        super({
             name = 'Рука',
             attack = 1,
             durability = Infinity,
             range = 1,
-        }, obj));  
+        });  
     }
 }
 
 class Bow extends Weapon {
-    constructor(obj) {
-        super(Object.assign({
+    constructor() {
+        super({
             name = 'Лук',
             attack = 10,
             durability = 200,
             range = 3,
-        }, obj));  
+        });  
     }
 }
 
 class Sword extends Weapon {
-    constructor(obj) {
-        super(Object.assign({
+    constructor() {
+        super({
             name = 'Меч',
             attack = 25,
             durability = 500,
             range = 1,
-        }, obj));  
+        });  
     }
 }
 
 class Knife extends Weapon {
-    constructor(obj) {
-        super(Object.assign({
+    constructor() {
+        super({
             name = 'Нож',
             attack = 5,
             durability = 300,
             range = 1,
-        }, obj));  
+        });  
     }
 }
 
 class Staff extends Weapon {
-    constructor(obj) {
-        super(Object.assign({
+    constructor() {
+        super({
             name = 'Посох',
             attack = 8,
             durability = 300,
             range = 2,
-        }, obj));  
+        });  
     }
 }
 
 class LongBow extends Bow {
-    constructor(obj) {
-        super(Object.assign({
+    constructor() {
+        super({
             name = 'Длинный лук',
             attack = 15,
             range = 4,
-        }, obj));  
+        });  
+    }
+}
+
+class LongBow extends Bow {
+    constructor() {
+        super();
+        this.name = 'Длинный лук';
+        this.attack = 15;
+        this.range = 4;
     }
 }
 
 class Axe extends Sword {
-    constructor(obj) {
-        super(Object.assign({
-            name = 'Секира',
-            attack = 27,
-            durability = 800,
-        }, obj));  
+    constructor() {
+        super();
+        this.name = 'Секира';
+        this.attack = 27;
+        this.durability = 800;
     }
 }
 
 class StormStaff extends Staff {
-    constructor(obj) {
-        super(Object.assign({
-            name = 'Посох Бури',
-            attack = 10,
-            range = 3,
-        }, obj));  
+    constructor() {
+        super();
+        this.name = 'Посох Бури';
+        this.attack = 10;
+        this.range = 3;
     }
 }
-
-// class Bow extends Weapon {
-//     constructor(obj) {
-//         this.name = 'Лук';
-//         this.attack = 10;
-//         this.durability = 200;
-//         this.range = 3;
-//     }
-// }
-
-// class Sword extends Weapon {
-//     constructor(obj) {
-//         this.name = 'Меч';
-//         this.attack = 25;
-//         this.durability = 500;
-//         this.range = 1;
-//     }
-// }
-
-// class Knife extends Weapon {
-//     constructor(obj) {
-//         this.name = 'Нож';
-//         this.attack = 5;
-//         this.durability = 300;
-//         this.range = 1;
-//     }
-// }
-
-// class Staff extends Weapon {
-//     constructor(obj) {
-//         this.name = 'Посох';
-//         this.attack = 8;
-//         this.durability = 300;
-//         this.range = 2;
-//     }
-// }
-
-// class LongBow extends Bow {
-//     constructor(obj) {
-//         super(durability);
-//         this.name = 'Длинный лук';
-//         this.attack = 15;
-//         this.range = 4;
-//     }
-// }
-
-// class Axe extends Sword {
-//     constructor(obj) {
-//         super(range);
-//         this.name = 'Секира';
-//         this.attack = 27;
-//         this.durability = 800;
-//     }
-// }
-
-// class StormStaff extends Staff {
-//     constructor(obj) {
-//         super(durability);
-//         this.name = 'Посох Бури';
-//         this.attack = 10;
-//         this.range = 3;
-//     }
-// }
