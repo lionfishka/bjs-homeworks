@@ -2,9 +2,8 @@
 
 function parseCount(value) {
     const newValue = Number.parseInt(value);
-    if (typeof newValue === NaN) {
-        const parseCountError = new Error("Невалидное значение");
-        throw parseCountError;
+    if (Number.isNaN(newValue)) {
+        throw new Error("Невалидное значение");
     } else {
         return newValue;
     }
@@ -25,29 +24,31 @@ class Triangle {
         this.a = a;
         this.b = b;
         this.c = c;
-    }
-
-    // (сумма двух сторон меньше третьей) 
-    validateTriangle() {
         if ((a + b) < c || (a + c) < b || (b + c) < a) {
-            const triangleError = new Error("Треугольник с такими сторонами не существует");
-            throw triangleError;
+            throw new Error("Треугольник с такими сторонами не существует");
          }
     }
 
+    // (сумма двух сторон меньше третьей) 
+    // validateTriangle() {
+    //     if ((a + b) < c || (a + c) < b || (b + c) < a) {
+    //         throw new Error("Треугольник с такими сторонами не существует");
+    //      }
+    // }
+
     getPerimeter() {
-        perimeter = a + b + c;
-        return perimeter;
+        return (this.a + this.b + this.c);
     }
 
     getArea() {
+        let perimeter = this.a + this.b + this.c;
         let p = perimeter / 2;
-        area = Math.sqrt(p * (p - a) * (p - b) * (p - c))
-        return area.toFixed(3);
+        let area = Math.sqrt(p * (p - this.a) * (p - this.b) * (p - this.c))
+        return Number(area.toFixed(3));
     }
 }
 
-function getTriange(a,b,c) {
+function getTriangle(a,b,c) {
     try {
         return new Triangle(a,b,c);
     } catch(e) {
