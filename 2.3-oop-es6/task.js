@@ -46,10 +46,10 @@ const stormStaff = new Weapon('Посох Бури', 10, 300, 3);
 class Arm extends Weapon {
     constructor() {
         super({
-            name = 'Рука',
-            attack = 1,
-            durability = Infinity,
-            range = 1,
+            name: 'Рука',
+            attack: 1,
+            durability: Infinity,
+            range: 1,
         });  
     }
 }
@@ -57,10 +57,10 @@ class Arm extends Weapon {
 class Bow extends Weapon {
     constructor() {
         super({
-            name = 'Лук',
-            attack = 10,
-            durability = 200,
-            range = 3,
+            name: 'Лук',
+            attack: 10,
+            durability: 200,
+            range: 3,
         });  
     }
 }
@@ -68,10 +68,10 @@ class Bow extends Weapon {
 class Sword extends Weapon {
     constructor() {
         super({
-            name = 'Меч',
-            attack = 25,
-            durability = 500,
-            range = 1,
+            name: 'Меч',
+            attack: 25,
+            durability: 500,
+            range: 1,
         });  
     }
 }
@@ -79,10 +79,10 @@ class Sword extends Weapon {
 class Knife extends Weapon {
     constructor() {
         super({
-            name = 'Нож',
-            attack = 5,
-            durability = 300,
-            range = 1,
+            name: 'Нож',
+            attack: 5,
+            durability: 300,
+            range: 1,
         });  
     }
 }
@@ -90,10 +90,10 @@ class Knife extends Weapon {
 class Staff extends Weapon {
     constructor() {
         super({
-            name = 'Посох',
-            attack = 8,
-            durability = 300,
-            range = 2,
+            name: 'Посох',
+            attack: 8,
+            durability: 300,
+            range: 2,
         });  
     }
 }
@@ -101,9 +101,9 @@ class Staff extends Weapon {
 class LongBow extends Bow {
     constructor() {
         super({
-            name = 'Длинный лук',
-            attack = 15,
-            range = 4,
+            name: 'Длинный лук',
+            attack: 15,
+            range: 4,
         });  
     }
 }
