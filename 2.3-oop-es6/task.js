@@ -17,7 +17,7 @@ class Weapon {
     getDamage() {
         if (this.durability===0) {
             return 0;
-        } else if (this.durability >= (this.startDurability*0,3)) {
+        } else if (this.durability >= (this.startDurability*0.3)) {
             return this.attack;
         } else {
             return this.attack / 2;
@@ -105,15 +105,6 @@ class LongBow extends Bow {
             attack: 15,
             range: 4,
         });  
-    }
-}
-
-class LongBow extends Bow {
-    constructor() {
-        super();
-        this.name = 'Длинный лук';
-        this.attack = 15;
-        this.range = 4;
     }
 }
 
