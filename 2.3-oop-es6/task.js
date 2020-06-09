@@ -100,11 +100,10 @@ class Staff extends Weapon {
 
 class LongBow extends Bow {
     constructor() {
-        super({
-            name: 'Длинный лук',
-            attack: 15,
-            range: 4,
-        });  
+        super();
+        this.name = 'Длинный лук';
+        this.attack = 15;
+        this.range = 4;
     }
 }
 
